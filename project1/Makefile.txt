@@ -1,0 +1,10 @@
+askisi4 : main.o STACKImplementation.o palindromes.o
+	gcc main.o STACKImplementation.o palindromes.o -o askisi4
+main.o : main.c STACK.h Item.h Header.h
+	gcc -c main.c
+STACKImplementation.o : STACKImplementation.c STACK.h Item.h
+	gcc -c STACKImplementation.c
+palindromes.o : palindromes.c STACK.h Item.h Header.h
+	gcc -c palindromes.c
+clean : 
+	rm askisi4 main.o STACKImplementation.o palindromes.o
